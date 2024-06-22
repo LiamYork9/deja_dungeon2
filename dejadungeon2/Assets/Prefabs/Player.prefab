@@ -112,8 +112,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!61 &8742398032449861906
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -173,3 +173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1298801177540915559}
   moveSpeed: 5
+  facing: {x: 1, y: 0}
+  tryInteract: 0
+  interactMask:
+    serializedVersion: 2
+    m_Bits: 0
