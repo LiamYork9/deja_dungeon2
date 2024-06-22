@@ -106,6 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3854905911210417109}
+  - component: {fileID: 4217884722308307309}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -130,6 +131,21 @@ Transform:
   - {fileID: 2730243839946612841}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4217884722308307309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3848433044342603587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b926ab952fb674845a86b093247804ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathContainer: {fileID: 2730243839946612841}
+  rb: {fileID: 6655682811058271582}
+  speed: 5
 --- !u!1 &3979638818599837554
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +218,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2803145996768440276}
   - component: {fileID: 9022121929826647130}
-  - component: {fileID: 1968458897877801985}
   - component: {fileID: 7473243661127048643}
   - component: {fileID: 6655682811058271582}
   m_Layer: 0
@@ -279,21 +294,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1968458897877801985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9103385057683558548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b926ab952fb674845a86b093247804ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathContainer: {fileID: 2730243839946612841}
-  rb: {fileID: 6655682811058271582}
-  speed: 5
 --- !u!58 &7473243661127048643
 CircleCollider2D:
   m_ObjectHideFlags: 0

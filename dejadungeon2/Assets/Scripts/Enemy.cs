@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
 
     public void Reset()
     {
-        transform.position = startPos;
+        rb.MovePosition(startPos);
+        curWaypoint = 0;
     }
 }
