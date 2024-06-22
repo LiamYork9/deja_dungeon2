@@ -26,7 +26,7 @@ public class Lever : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             
-                this.spriteRenderer.enabled = true;
+                spriteRenderer.enabled = true;
                 TheOtherCollider.enabled = false;
                  Bridge.enabled = false;
                 TheOtherCollider2.enabled  = false;
@@ -47,7 +47,7 @@ public class Lever : MonoBehaviour
 
     private void BridgeReset()
     {
-        this.spriteRenderer.enabled = false;
+        spriteRenderer.enabled = false;
         TheOtherCollider.enabled = true;
         Bridge.enabled = true;
         TheOtherCollider2.enabled = true;
