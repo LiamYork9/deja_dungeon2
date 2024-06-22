@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
     public bool auto = false; //do projectiles fire automatically?
+    bool s_auto;
     public float delay = 0.5f; //time between projectile firings
     float lastFired = 0; //last time projectile was fired
     public float angle = 0f; //angle projectiles are fired
@@ -18,6 +20,11 @@ public class Shooter : MonoBehaviour
 
     public ObjectPool pool;
 
+    private void Start()
+    {
+        s_auto = auto;
+    }
+
     public void ResetObject()
     {
         lastFired = 0;
@@ -25,6 +32,7 @@ public class Shooter : MonoBehaviour
         angleChangeOffset = 0f;
         angleChangeDirection = 1;
         pool.ReturnAll();
+        auto = s_auto;
     }
 
     private void FixedUpdate()
