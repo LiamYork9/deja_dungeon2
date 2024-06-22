@@ -19,6 +19,14 @@ public class PlayerReset : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Death")
+        {
+            Respawn();
+        }
+    }
+
     void Die()
     {
         Respawn();
