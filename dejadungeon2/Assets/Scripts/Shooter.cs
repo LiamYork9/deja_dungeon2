@@ -18,6 +18,14 @@ public class Shooter : MonoBehaviour
 
     public ObjectPool pool;
 
+    void Start()
+    {
+        EventManager.ResetEvent += ResetObject;
+    }
+
+
+
+
     public void ResetObject()
     {
         lastFired = 0;
