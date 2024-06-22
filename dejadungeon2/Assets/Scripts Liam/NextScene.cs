@@ -6,11 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
+    public string sceneName;
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == ("Player"))
         {
-            SceneManager.LoadScene("SampleScene");
+            LoadTarget(sceneName);
         }
+    }
+
+    public void LoadTarget(string sceneName)
+    {
+        // Debug.Log("sceneloader");
+        
+        SceneManager.LoadScene(sceneName);
     }
 }
