@@ -668,15 +668,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3026140703178749088, guid: 777b77c3fb3d6e542897b8ff768bfbfa, type: 3}
       propertyPath: spread
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3026140703178749088, guid: 777b77c3fb3d6e542897b8ff768bfbfa, type: 3}
       propertyPath: angleChange
-      value: 1
+      value: 359
       objectReference: {fileID: 0}
     - target: {fileID: 3026140703178749088, guid: 777b77c3fb3d6e542897b8ff768bfbfa, type: 3}
       propertyPath: angleChangeAmount
-      value: 180
+      value: 121
       objectReference: {fileID: 0}
     - target: {fileID: 6021255571858999729, guid: 777b77c3fb3d6e542897b8ff768bfbfa, type: 3}
       propertyPath: m_Name
