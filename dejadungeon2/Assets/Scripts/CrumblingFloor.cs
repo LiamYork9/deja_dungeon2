@@ -17,6 +17,11 @@ public class CrumblingFloor : MonoBehaviour
         if (state == "Stable")
         {
             state = "Falling";
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        else if (state == "Falling")
+        {
+            Debug.Log("Die");
         }
     }
 
