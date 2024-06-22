@@ -26,6 +26,7 @@ public class Shooter : MonoBehaviour
     {
         s_auto = auto;
         ammo = ammoMax;
+        EventManager.ResetEvent += ResetObject;
     }
 
     public void ResetObject()
