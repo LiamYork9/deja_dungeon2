@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(rb.position, facing, 2f, interactMask.value);
             if (hit.collider != null)
             {
-                hit.collider.GetComponent<Interactable>()?.Interact();
+                hit.collider.GetComponent<Interactable>()?.Interact(facing);
             }
         }
     }
