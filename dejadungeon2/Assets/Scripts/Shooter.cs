@@ -7,34 +7,24 @@ public class Shooter : MonoBehaviour
     public bool auto = false; //do projectiles fire automatically?
     public float delay = 0.5f; //time between projectile firings
     float lastFired = 0; //last time projectile was fired
-    public GameObject prefab;
     public float angle = 0f; //angle projectiles are fired
     public float spread = 0f; //random angle deviation
     public int angleChange = 0; //amount of times angle should change
-    public float angleChangeAmount = 15f;
+    public float angleChangeAmount = 15f; //amount angle should change by per change
     public bool angleChangeReverseBehavior = false; //should angle change direction reverse when it hits amount of angle changes to make
-    int angleChangeCount = 0;
-    float angleChangeOffset = 0f;
-    int angleChangeReverse = 1;
+    int angleChangeCount = 0; //amount of times angle has changed
+    float angleChangeOffset = 0f; //current angle change
+    int angleChangeDirection = 1; //direction angle change should go, 1 is clockwise, -1 is counter
 
-    Queue<GameObject> pool = new Queue<GameObject>();
-    public int preload = 10; //amount of projectiles to preload into the pool
+    public ObjectPool pool;
 
-    private void Start()
+    public void ResetObject()
     {
-        for (int i = 0; i < preload; i++) CreateAndPoolPrefab();
-    }
-
-    void CreateAndPoolPrefab()
-    {
-        GameObject obj = Instantiate(prefab);
-        obj.AddComponent<ReturnToObjectPool>().pool = pool;
-        obj.SetActive(false); //ReturnToObjectPool will handle enqueueing the object
-    }
-
-    GameObject GetFromPool() { 
-        if (pool.Count == 0) CreateAndPoolPrefab();
-        return pool.Dequeue(); 
+        lastFired = 0;
+        angleChangeCount = 0;
+        angleChangeOffset = 0f;
+        angleChangeDirection = 1;
+        pool.ReturnAll();
     }
 
     private void FixedUpdate()
@@ -44,7 +34,7 @@ public class Shooter : MonoBehaviour
 
     public void Fire()
     {
-        GameObject obj = GetFromPool();
+        GameObject obj = pool.GetFromPool();
         Projectile projectile = obj.GetComponent<Projectile>();
         obj.transform.eulerAngles = transform.eulerAngles + new Vector3(0,0, angle + angleChangeOffset + Random.Range(-spread, spread));
         obj.transform.position = transform.position;
@@ -52,14 +42,14 @@ public class Shooter : MonoBehaviour
         projectile.Fired();
         if (angleChange > 0)
         {
-            angleChangeCount += 1 * angleChangeReverse;
+            angleChangeCount += 1 * angleChangeDirection;
             angleChangeOffset = angleChangeCount * angleChangeAmount;
             if (angleChangeCount > angleChange)
             {
                 if (angleChangeReverseBehavior)
                 {
                     angleChangeCount = angleChange - 1;
-                    angleChangeReverse = -1;
+                    angleChangeDirection = -1;
                 } else
                 {
                     angleChangeCount = 0;
@@ -68,7 +58,7 @@ public class Shooter : MonoBehaviour
             else if (angleChangeCount == -1) //only happens if we were reversing in the first place
             {
                 angleChangeCount = 1;
-                angleChangeReverse = 1;
+                angleChangeDirection = 1;
             }
         }
         lastFired = Time.time;
