@@ -7,6 +7,7 @@ public class ShovableObject : MonoBehaviour
     public bool moving;
     public Vector2 destination;
     public float elapsed;
+    public Rigidbody2D rb;
 
     public void Shove(Vector2 dir)
     {
@@ -23,7 +24,7 @@ public class ShovableObject : MonoBehaviour
         if (moving)
         {
             elapsed += Time.deltaTime;
-            transform.position = (Vector2.Lerp(transform.position, destination, elapsed));
+            rb.MovePosition(Vector2.Lerp(transform.position, destination, elapsed));
             if (elapsed >= 1) { 
                 moving = false;
             }

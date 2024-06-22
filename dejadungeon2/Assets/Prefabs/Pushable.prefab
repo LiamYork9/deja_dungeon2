@@ -148,6 +148,7 @@ MonoBehaviour:
   moving: 0
   destination: {x: 0, y: 0}
   elapsed: 0
+  rb: {fileID: 6878042463347938784}
 --- !u!114 &4722019115415254057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +184,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5110884444796181593}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
