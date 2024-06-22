@@ -211,15 +211,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cf79ca94bf36d43b8322a326b718d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &988139541 stripped
+--- !u!114 &1315220511 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3143939376865080607, guid: 777b77c3fb3d6e542897b8ff768bfbfa, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3026140703178749088, guid: 777b77c3fb3d6e542897b8ff768bfbfa, type: 3}
   m_PrefabInstance: {fileID: 925000268}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d68bb5d155de5c642933f0332a3de373, type: 3}
+  m_Script: {fileID: 11500000, guid: b3cf79ca94bf36d43b8322a326b718d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1368575085
@@ -498,14 +498,14 @@ PrefabInstance:
     - target: {fileID: 4722019115415254057, guid: 06f46b9f080cfb74f9f5e87ff6412d04, type: 3}
       propertyPath: interactedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 988139541}
+      objectReference: {fileID: 1315220511}
     - target: {fileID: 4722019115415254057, guid: 06f46b9f080cfb74f9f5e87ff6412d04, type: 3}
       propertyPath: interactedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReturnAll
+      value: ResetObject
       objectReference: {fileID: 0}
     - target: {fileID: 4722019115415254057, guid: 06f46b9f080cfb74f9f5e87ff6412d04, type: 3}
       propertyPath: interactedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ObjectPool, Assembly-CSharp
+      value: Shooter, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5110884444796181593, guid: 06f46b9f080cfb74f9f5e87ff6412d04, type: 3}
       propertyPath: m_Name
