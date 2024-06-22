@@ -27,6 +27,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("enemy collided with "+collision.name);
+    }
+
     public void Reset()
     {
         transform.position = startPos;
