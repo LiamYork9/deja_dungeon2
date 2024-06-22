@@ -16,5 +16,6 @@ public class BlockReset : MonoBehaviour
     private void BlockReturn()
     {
         transform.position = startPos;
+        gameObject.GetComponent<ShovableObject>().moving = false;
     }
 }
