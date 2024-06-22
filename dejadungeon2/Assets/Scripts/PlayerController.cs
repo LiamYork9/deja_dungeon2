@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 facing = Vector2.right;
     public bool tryInteract = false;
     public LayerMask interactMask;
+    public float interactLength = 0.6f;
 
     void FixedUpdate()
     {
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
         if (tryInteract)
         {
             tryInteract = false;
-            RaycastHit2D hit = Physics2D.Raycast(rb.position, facing, 2f, interactMask.value);
+            RaycastHit2D hit = Physics2D.Raycast(rb.position, facing, interactLength, interactMask.value);
             if (hit.collider != null)
             {
                 hit.collider.GetComponent<Interactable>()?.Interact(facing);
