@@ -32,6 +32,8 @@ public class Shooter : MonoBehaviour
         if (auto && Time.time > lastFired + delay) Fire();
     }
 
+    public void ToggleAuto() { auto = !auto; }
+
     public void Fire()
     {
         GameObject obj = pool.GetFromPool();
