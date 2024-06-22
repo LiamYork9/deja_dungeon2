@@ -9,7 +9,7 @@ public class CrumblingFloor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        EventManager.ResetEvent+= TileReset;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -17,12 +17,31 @@ public class CrumblingFloor : MonoBehaviour
         if (state == "Stable")
         {
             state = "Falling";
-            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
         else if (state == "Falling")
         {
+            
             Debug.Log("Die");
         }
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (state == "Falling")
+        {
+            state = "Fallen";
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+        }
+    }
+
+    
+
+    public void TileReset()
+    {
+        state = "Stable";
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
     }
 
     // Update is called once per frame
