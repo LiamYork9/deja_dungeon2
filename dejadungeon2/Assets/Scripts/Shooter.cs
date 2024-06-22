@@ -21,7 +21,7 @@ public class Shooter : MonoBehaviour
     int ammo;
 
     public ObjectPool pool;
-
+    public AudioSource sound;
     private void Start()
     {
         s_auto = auto;
@@ -54,6 +54,7 @@ public class Shooter : MonoBehaviour
             if (ammo < 1) return;
             ammo--;
         }
+        if (sound != null) sound.Play();
         GameObject obj = pool.GetFromPool();
         Projectile projectile = obj.GetComponent<Projectile>();
         obj.transform.eulerAngles = transform.eulerAngles + new Vector3(0,0, angle + angleChangeOffset + Random.Range(-spread, spread));
