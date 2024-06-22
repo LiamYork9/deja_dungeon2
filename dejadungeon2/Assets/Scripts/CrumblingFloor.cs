@@ -14,6 +14,8 @@ public class CrumblingFloor : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.tag == "Player")
+        {
         if (state == "Stable")
         {
             state = "Falling";
@@ -23,15 +25,19 @@ public class CrumblingFloor : MonoBehaviour
             
             Debug.Log("Die");
         }
+        }
     }
 
     public void OnTriggerExit2D(Collider2D other)
     {
+        if (other.tag == "Player")
+        {
         if (state == "Falling")
         {
             state = "Fallen";
             gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+        }
         }
     }
 
