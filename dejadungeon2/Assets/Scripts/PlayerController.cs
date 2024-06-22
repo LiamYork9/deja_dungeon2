@@ -16,10 +16,14 @@ public class PlayerController : MonoBehaviour
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         rb.MovePosition(rb.position + moveInput.normalized * Time.deltaTime * moveSpeed);
         //Get direction we are facing based on move input
-        if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y))
+        if (moveInput.magnitude > 0)
         {
-            facing = moveInput.x < 0 ? Vector2.left : Vector2.right;
-        } else facing = moveInput.y < 0 ? Vector2.down : Vector2.up;
+            if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y))
+            {
+                facing = moveInput.x < 0 ? Vector2.left : Vector2.right;
+            }
+            else facing = moveInput.y < 0 ? Vector2.down : Vector2.up;
+        }
 
         //Interact with whatever is in front of the player
         if (tryInteract)
