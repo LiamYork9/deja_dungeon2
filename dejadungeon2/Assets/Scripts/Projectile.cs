@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         print("collided with "+collision.name);
+        gameObject.SetActive(false);
     }
 
     public void Fired()

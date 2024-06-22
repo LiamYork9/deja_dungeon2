@@ -42,7 +42,7 @@ public class Shooter : MonoBehaviour
         if (auto && Time.time > lastFired + delay) Fire();
     }
 
-    void Fire()
+    public void Fire()
     {
         GameObject obj = GetFromPool();
         Projectile projectile = obj.GetComponent<Projectile>();
