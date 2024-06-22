@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         startPos = transform.position;
+        EventManager.ResetEvent += Reset;
     }
 
     private void FixedUpdate()
@@ -34,7 +35,7 @@ public class Enemy : MonoBehaviour
 
     public void Reset()
     {
-        rb.MovePosition(startPos);
+        rb.transform.position = startPos;
         curWaypoint = 0;
     }
 }
