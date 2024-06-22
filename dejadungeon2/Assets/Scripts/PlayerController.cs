@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask interactMask;
     public float interactLength = 0.6f;
 
+    public Animator animator;
+
     void FixedUpdate()
     {
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -22,8 +24,13 @@ public class PlayerController : MonoBehaviour
             if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y))
             {
                 facing = moveInput.x < 0 ? Vector2.left : Vector2.right;
+                animator.SetInteger("Facing", moveInput.x < 0 ? 2 : 1);
             }
-            else facing = moveInput.y < 0 ? Vector2.down : Vector2.up;
+            else 
+            {
+                facing = moveInput.y < 0 ? Vector2.down : Vector2.up;
+                animator.SetInteger("Facing", moveInput.y < 0 ? 0 : 3);
+            }
         }
 
         //Interact with whatever is in front of the player
