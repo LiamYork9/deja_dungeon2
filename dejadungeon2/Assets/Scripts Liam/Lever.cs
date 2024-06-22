@@ -20,11 +20,16 @@ public class Lever : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             this.spriteRenderer.enabled = true;
+           
         }
+
     }
+
+    
 
     private void BridgeReset()
     {
         this.spriteRenderer.enabled = false;
+       
     }
 }
