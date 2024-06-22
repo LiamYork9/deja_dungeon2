@@ -17,12 +17,15 @@ public class Shooter : MonoBehaviour
     int angleChangeCount = 0; //amount of times angle has changed
     float angleChangeOffset = 0f; //current angle change
     int angleChangeDirection = 1; //direction angle change should go, 1 is clockwise, -1 is counter
+    public int ammoMax = -1; //Amount of times shooter can fire, -1 is infinite ammo
+    int ammo;
 
     public ObjectPool pool;
 
     private void Start()
     {
         s_auto = auto;
+        ammo = ammoMax;
     }
 
     public void ResetObject()
@@ -33,6 +36,7 @@ public class Shooter : MonoBehaviour
         angleChangeDirection = 1;
         pool.ReturnAll();
         auto = s_auto;
+        ammo = ammoMax;
     }
 
     private void FixedUpdate()
@@ -44,6 +48,11 @@ public class Shooter : MonoBehaviour
 
     public void Fire()
     {
+        if (ammoMax >= 0)
+        {
+            if (ammo < 1) return;
+            ammo--;
+        }
         GameObject obj = pool.GetFromPool();
         Projectile projectile = obj.GetComponent<Projectile>();
         obj.transform.eulerAngles = transform.eulerAngles + new Vector3(0,0, angle + angleChangeOffset + Random.Range(-spread, spread));
