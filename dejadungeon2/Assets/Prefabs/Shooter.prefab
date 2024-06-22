@@ -30,7 +30,8 @@ Transform:
   m_LocalPosition: {x: -7.76, y: 0.62558496, z: -0.013019197}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6848797133482612707}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3026140703178749088
@@ -53,7 +54,7 @@ MonoBehaviour:
   angleChange: 0
   angleChangeAmount: 0
   angleChangeReverseBehavior: 0
-  preload: 10
+  pool: {fileID: 3143939376865080607}
 --- !u!212 &8757327839630818059
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -106,3 +107,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7530728638884862079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6848797133482612707}
+  - component: {fileID: 3143939376865080607}
+  m_Layer: 0
+  m_Name: ObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6848797133482612707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7530728638884862079}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.7608833, y: 0.62872696, z: -0.07764558}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6796575047780495870}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3143939376865080607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7530728638884862079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d68bb5d155de5c642933f0332a3de373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preload: 10
+  prefab: {fileID: 828186822077769537, guid: fe9f5fa6cfa837d419e6baecb6035f0e, type: 3}

@@ -211,6 +211,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cf79ca94bf36d43b8322a326b718d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1315220511 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3026140703178749088, guid: 777b77c3fb3d6e542897b8ff768bfbfa, type: 3}
+  m_PrefabInstance: {fileID: 925000268}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3cf79ca94bf36d43b8322a326b718d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1368575085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -479,6 +490,22 @@ PrefabInstance:
     - target: {fileID: 1638233590265969753, guid: 06f46b9f080cfb74f9f5e87ff6412d04, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722019115415254057, guid: 06f46b9f080cfb74f9f5e87ff6412d04, type: 3}
+      propertyPath: interactedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722019115415254057, guid: 06f46b9f080cfb74f9f5e87ff6412d04, type: 3}
+      propertyPath: interactedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1315220511}
+    - target: {fileID: 4722019115415254057, guid: 06f46b9f080cfb74f9f5e87ff6412d04, type: 3}
+      propertyPath: interactedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722019115415254057, guid: 06f46b9f080cfb74f9f5e87ff6412d04, type: 3}
+      propertyPath: interactedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shooter, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5110884444796181593, guid: 06f46b9f080cfb74f9f5e87ff6412d04, type: 3}
       propertyPath: m_Name

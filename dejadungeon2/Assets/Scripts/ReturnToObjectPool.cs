@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ReturnToObjectPool : MonoBehaviour
 {
-    public Queue<GameObject> pool;
+    public ObjectPool pool;
     private void OnDisable()
     {
-        pool.Enqueue(gameObject);
+        pool.Return(gameObject);
     }
 }
