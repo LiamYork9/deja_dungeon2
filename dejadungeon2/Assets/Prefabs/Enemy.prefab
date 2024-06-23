@@ -146,6 +146,7 @@ MonoBehaviour:
   pathContainer: {fileID: 2730243839946612841}
   rb: {fileID: 6655682811058271582}
   speed: 5
+  animator: {fileID: 6067075343609357764}
 --- !u!1 &3979638818599837554
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +221,7 @@ GameObject:
   - component: {fileID: 9022121929826647130}
   - component: {fileID: 7473243661127048643}
   - component: {fileID: 6655682811058271582}
+  - component: {fileID: 6067075343609357764}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Death
@@ -356,3 +358,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &6067075343609357764
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9103385057683558548}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8bd728bc55a0174a93e5c84a9af8a17, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
