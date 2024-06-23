@@ -125,6 +125,14 @@ PrefabInstance:
       value: Key
       objectReference: {fileID: 0}
     - target: {fileID: 6545014023751334642, guid: bab460bcfa0f3ba4b8dab6387ac0c1d7, type: 3}
+      propertyPath: onlyAllowPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545014023751334642, guid: bab460bcfa0f3ba4b8dab6387ac0c1d7, type: 3}
+      propertyPath: onlyAllowPlayerPickup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545014023751334642, guid: bab460bcfa0f3ba4b8dab6387ac0c1d7, type: 3}
       propertyPath: entered.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
