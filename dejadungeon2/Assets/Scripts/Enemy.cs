@@ -51,5 +51,6 @@ public class Enemy : MonoBehaviour
     {
         rb.transform.position = startPos;
         curWaypoint = 0;
+        targetPos = pathContainer.GetChild(curWaypoint).position;
     }
 }
