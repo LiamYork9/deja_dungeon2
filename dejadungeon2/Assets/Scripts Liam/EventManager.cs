@@ -21,7 +21,7 @@ public class EventManager : MonoBehaviour
     {
         if (Reset == true)
         {
-            if (Input.GetKeyDown(KeyCode.R) && !CheckForOverlap())
+            if (Input.GetKeyDown(KeyCode.R) /*&& !CheckForOverlap()*/)
             {
                 ResetEvent?.Invoke();
             }
