@@ -908,6 +908,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.6415094
       objectReference: {fileID: 0}
+    - target: {fileID: 3379202772483244721, guid: bab460bcfa0f3ba4b8dab6387ac0c1d7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5092200514831714206, guid: bab460bcfa0f3ba4b8dab6387ac0c1d7, type: 3}
       propertyPath: m_Name
       value: TriggerArea
