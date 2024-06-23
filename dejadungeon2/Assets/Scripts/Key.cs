@@ -6,6 +6,11 @@ public class Key : MonoBehaviour
 {
     public static bool keyPickedUp = false;
 
+    public void Start()
+    {
+        EventManager.ResetEvent += ResetObject;
+    }
+
     public void ResetObject()
     {
         keyPickedUp = false;
