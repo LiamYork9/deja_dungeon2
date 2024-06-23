@@ -216,3 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47647143561843d43baf8a21c80542b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overlapCheckMask:
+    serializedVersion: 2
+    m_Bits: 1024
