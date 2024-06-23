@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7535656610083043105}
   - component: {fileID: 5339475301865120504}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47efaf0b3ac601408724ec257b44e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: SampleScene
+  sceneName: Level 3
 --- !u!61 &5339475301865120504
 BoxCollider2D:
   m_ObjectHideFlags: 0
