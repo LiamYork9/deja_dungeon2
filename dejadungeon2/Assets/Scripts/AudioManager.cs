@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
 
     public void SetVolume(float val)
     {
-        volume = Mathf.Log10(val) * 20;
+        volume = val == 0f ? -80 : Mathf.Log10(val) * 20;
         mixer.SetFloat("Volume", volume);
     }
 }
