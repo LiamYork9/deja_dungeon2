@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    void Start()
+    {
+        EventManager.ResetEvent += ResetObject;
+    }
+
+
     public void ResetObject()
     {
         gameObject.SetActive(true);
