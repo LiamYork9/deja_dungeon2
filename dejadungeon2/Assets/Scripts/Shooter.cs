@@ -61,25 +61,30 @@ public class Shooter : MonoBehaviour
         obj.transform.position = transform.position;
         obj.SetActive(true);
         projectile.Fired();
-        if (angleChange > 0)
+        if (angleChange != 0)
         {
-            angleChangeCount += 1 * angleChangeDirection;
-            angleChangeOffset = angleChangeCount * angleChangeAmount;
-            if (angleChangeCount > angleChange)
+            angleChangeOffset += angleChangeAmount;
+            angleChangeOffset %= 360;
+            if (angleChange > 0)
             {
-                if (angleChangeReverseBehavior)
+                angleChangeCount += 1 * angleChangeDirection;
+                if (angleChangeCount > angleChange)
                 {
-                    angleChangeCount = angleChange - 1;
-                    angleChangeDirection = -1;
-                } else
-                {
-                    angleChangeCount = 0;
+                    if (angleChangeReverseBehavior)
+                    {
+                        angleChangeCount = angleChange - 1;
+                        angleChangeDirection = -1;
+                    }
+                    else
+                    {
+                        angleChangeCount = 0;
+                    }
                 }
-            }
-            else if (angleChangeCount == -1) //only happens if we were reversing in the first place
-            {
-                angleChangeCount = 1;
-                angleChangeDirection = 1;
+                else if (angleChangeCount == -1) //only happens if we were reversing in the first place
+                {
+                    angleChangeCount = 1;
+                    angleChangeDirection = 1;
+                }
             }
         }
         lastFired = Time.time;
