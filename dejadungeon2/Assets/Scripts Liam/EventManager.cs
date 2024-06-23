@@ -9,6 +9,8 @@ public class EventManager : MonoBehaviour
     BoxCollider2D player;
     public LayerMask mask;
 
+    public bool Reset = true;
+
     void Awake()
     {
         ResetEvent = null;
@@ -17,9 +19,22 @@ public class EventManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !CheckForOverlap())
+        if (Reset == true)
         {
-            ResetEvent?.Invoke();
+            if (Input.GetKeyDown(KeyCode.R) && !CheckForOverlap())
+            {
+                ResetEvent?.Invoke();
+            }
+        }
+
+        if (PauseMenu.GameIsPaused)
+        {
+            Reset = false;
+        }
+
+        if (PauseMenu.GameIsPaused == false)
+        {
+            Reset = true;
         }
     }
 
@@ -28,4 +43,6 @@ public class EventManager : MonoBehaviour
         print(player.IsTouchingLayers(mask.value));
         return player.IsTouchingLayers(mask.value);
     }
+
+    
 }
