@@ -6,7 +6,7 @@ public class Key : MonoBehaviour
 {
     public static bool keyPickedUp = false;
 
-    public void Reset()
+    public void ResetObject()
     {
         keyPickedUp = false;
         gameObject.SetActive(true);
